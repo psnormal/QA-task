@@ -31,7 +31,6 @@ public class JavaToDB {
             stmt.setString(2, operator);
             stmt.setString(3, ans);
             stmt.executeUpdate();
-
         } catch (SQLException e) {
             e.printStackTrace();
         }
