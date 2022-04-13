@@ -12,17 +12,17 @@ class SolutionTest {
 
     @Test
     void test_diag1Sym_1() {
-        test("AaA\nAaA\nAaA", Solution.diag1Sym("AAA\naaa\nAAA"));
+        test("AaA\nAaA\nAaA", Solution.diag1Sym("AAA aaa AAA"));
     }
 
     @Test
     void test_diag1Sym_2() {
-        test("AaA\nBbb\nCcC", Solution.diag1Sym("ABC\nabc\nAbC"));
+        test("AaA\nBbb\nCcC", Solution.diag1Sym("ABC abc AbC"));
     }
 
     @Test
     void test_rot90Clock_1() {
-        test("2151\n4362\n6573\n8784", Solution.rot90Clock("1234\n5678\n1357\n2468"));
+        test("2151\n4362\n6573\n8784", Solution.rot90Clock("1234 5678 1357 2468"));
     }
 
     @Test
@@ -32,7 +32,7 @@ class SolutionTest {
 
     @Test
     void test_selfieAndDiag1_1() {
-        test("A8b|A7.\n71c|811\n.1_|bc_", Solution.selfieAndDiag1("A8b\n71c\n.1_"));
+        test("A8b|A7.\n71c|811\n.1_|bc_", Solution.selfieAndDiag1("A8b 71c .1_"));
     }
 
     @Test
@@ -43,16 +43,16 @@ class SolutionTest {
 
     @Test
     void test_oper_1() {
-        test("aMOR\nrnpQ\nQmlW\nWMqs", Solution.oper(Solution::diag1Sym, "arQW\nMnmM\nOplq\nRQWs"));
+        test("aMOR\nrnpQ\nQmlW\nWMqs", Solution.oper(Solution::diag1Sym, "arQW MnmM Oplq RQWs"));
     }
 
     @Test
     void test_oper_2() {
-        test("311\n222\n103", Solution.oper(Solution::rot90Clock, "123\n120\n321"));
+        test("311\n222\n103", Solution.oper(Solution::rot90Clock, "123 120 321"));
     }
 
     @Test
     void test_oper_3() {
-        test("?$*|?+(\n+-=|$-0\n(0)|*=)", Solution.oper(Solution::selfieAndDiag1, "?$*\n+-=\n(0)"));
+        test("?$*|?+(\n+-=|$-0\n(0)|*=)", Solution.oper(Solution::selfieAndDiag1, "?$* +-= (0)"));
     }
 }

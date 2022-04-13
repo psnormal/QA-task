@@ -17,7 +17,7 @@ class JavaToDBTest {
     @Test
     void ResToDBTest_1() throws ClassNotFoundException, InvocationTargetException, NoSuchMethodException, InstantiationException, IllegalAccessException {
         //тут мы вызываем функцию, в которой ответ высчитывается и отправляется в базу данных
-        JavaToDB.ResToDB("diag1Sym", "AAA\naaa\nAAA");
+        JavaToDB.ResToDB("diag1Sym", "AAA aaa AAA");
         Class.forName("com.mysql.cj.jdbc.Driver").getDeclaredConstructor().newInstance();
         String query = "select answer from answers order by num desc limit 1";
         String actualAnswer = "";
@@ -37,7 +37,7 @@ class JavaToDBTest {
     @Test
     void ResToDBTest_2() throws ClassNotFoundException, InvocationTargetException, NoSuchMethodException, InstantiationException, IllegalAccessException {
         //тут мы вызываем функцию, в которой ответ высчитывается и отправляется в базу данных
-        JavaToDB.ResToDB("rot90Clock", "1234\n5678\n1357\n2468");
+        JavaToDB.ResToDB("rot90Clock", "1234 5678 1357 2468");
         Class.forName("com.mysql.cj.jdbc.Driver").getDeclaredConstructor().newInstance();
         String query = "select answer from answers order by num desc limit 1";
         String actualAnswer = "";
@@ -57,7 +57,7 @@ class JavaToDBTest {
     @Test
     void ResToDBTest_3() throws ClassNotFoundException, InvocationTargetException, NoSuchMethodException, InstantiationException, IllegalAccessException {
         //тут мы вызываем функцию, в которой ответ высчитывается и отправляется в базу данных
-        JavaToDB.ResToDB("selfieAndDiag1", "A8b\n71c\n.1_");
+        JavaToDB.ResToDB("selfieAndDiag1", "A8b 71c .1_");
         Class.forName("com.mysql.cj.jdbc.Driver").getDeclaredConstructor().newInstance();
         String query = "select answer from answers order by num desc limit 1";
         String actualAnswer = "";

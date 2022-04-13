@@ -34,7 +34,7 @@ public class Solution {
     }
 
     public static String selfieAndDiag1(String strng) {
-        String[] strs = strng.split("\n");
+        String[] strs = strng.split(" ");
         char[][] let = returnArray(strng);
         int n = let.length;
         String result = "";
@@ -56,7 +56,7 @@ public class Solution {
     }
 
     public static char[][] returnArray(String s) {
-        String[] strs = s.split("\n");
+        String[] strs = s.split(" ");
         int n = strs.length;
         char[][] letters = new char[n][n];
         for (int i = 0; i < n; i++) {
